@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Timer clock Project</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/all.min.css">   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "Urbanist", sans-serif;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to right,#2a208d, #710312);
+    }
+    .clockHolder{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+    }
+    .timeHolder{
+        background-color: rgb(1, 1, 1);
+        border: 2px solid #e2e590;
+        border-block-end-style: solid;
+        border-block-end-width: 10px;
+        color: #e2e590;
+        padding:  80px  150px 50px; 
+        font-size: 4rem;
+        border-radius: 10px;
+       
+    }
+    
+ 
+    #clock{
+        color: yellow;
+        
+    }
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clockHolder">
+            <div class="timeHolder">
+            <!-- <div class="timeOptions">
+                <i class="fa-solid fa-clock" data-title="Time"></i>
+                <i class="fa-solid fa-stopwatch" data-title="StopWatch"></i>
+                <i class="fa-solid fa-clock" data-title="CountDown"></i>
+            </div> -->
+            <div class="mainDiv">
+                <p id="clock"></p>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const currentTime = () => {
+            let curTime = new Date().toLocaleTimeString();
+            document.getElementById("clock").innerText = curTime;
+
+        };
+        currentTime();
+        const intervalId = setInterval(() => {
+            currentTime();
+        }, 1000);
+
+        setTimeout(() => clearInterval(intervalId), 5000);
+
+        
+
+    </script>
+
+
+
+    
+</body>
+</html>
